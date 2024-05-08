@@ -15,7 +15,7 @@ namespace SelectUniversity
         {
             string line;
             UniversitiesTable.ColumnCount = 3;
-            using (var fs = File.OpenText("City.txt"))
+            using (var fs = File.OpenText("../../../Resources/City.txt"))
             {
                 while ((line = fs.ReadLine()) != null)
                 {
@@ -25,7 +25,7 @@ namespace SelectUniversity
                 }
             }
             SelectCityBox.SelectedItem = cities[0];
-            using (var fs = File.OpenText("Universities.txt"))
+            using (var fs = File.OpenText("../../../Resources/Universities.txt"))
             {
                 int ID = 1;
                 while ((line = fs.ReadLine()) != null)
@@ -63,7 +63,7 @@ namespace SelectUniversity
                 {
                     name_label.Text = universities[i, 1];
                     city_label.Text = cities[int.Parse(universities[i, 2])-1];
-                    photobox.Image = Image.FromFile("Images/" + ID + " " + universities[i, 1] + ".jpg");
+                    photobox.Image = Image.FromFile("../../../Resources/Images/" + ID + " " + universities[i, 1] + ".jpg");
                     break;
                 }
             }
